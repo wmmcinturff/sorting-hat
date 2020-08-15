@@ -13,7 +13,8 @@ const buttonEvents = () => {
     document.getElementById('jumbotron-btn').addEventListener('click', buildForm);
     document.getElementById('form').addEventListener('click', addStudent);
     document.getElementById('form').addEventListener('click', buildCards);
-    document.querySelector('#student-buildCards').addEventListener('click', expelStudent);
+    document.querySelector('#student-cards').addEventListener("click", expelStudent);
+
 };
 
 const buildForm = () => {
@@ -83,7 +84,13 @@ const buildForm = () => {
       document.getElementById('inputStudent').value = '';
   }
   }};
+  const expelStudent = (e) => {
+    const expelButtonClicked = e.target.nodeName;
   
+    if (expelButtonClicked === 'A') {
+    studentCards.splice(expelButtonClicked, 1);
+    rebuildCards();
+  }};
   const rebuildCards = () => {
     let domString = '';
   for (let i = 0; i < studentCards.length; i++) {
@@ -98,12 +105,6 @@ const buildForm = () => {
     printToDom("student-cards", domString);
   };
   
-  const expelStudent = (e) => {
-    const expelButtonClicked = e.target.nodeName;
   
-    if (expelButtonClicked === 'A') {
-    studentCards.splice(expelButtonClicked, 1);
-    rebuildCards();
-  }};
   
   buttonEvents();
