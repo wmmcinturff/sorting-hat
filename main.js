@@ -7,7 +7,7 @@ const printToDom = (divId, textToPrint) => {
 
 const studentCards = [];
 
-const houses = ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw'];
+const houses = ['Gryffindor', 'Ravenclaw', 'Hufflepuff', 'Slytherin'];
 
 const buttonEvents = () => {
     document.getElementById('jumbotron-btn').addEventListener('click', buildForm);
